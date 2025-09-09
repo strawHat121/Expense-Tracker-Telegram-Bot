@@ -1,0 +1,41 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binaries built with `go test -c`
+*.test
+
+# Output of `go build` and `go run`
+*.out
+
+# Go coverage files
+*.cover
+*.coverprofile
+coverage.*
+
+# Logs
+*.log
+
+# Vendor directory (only if you’re not vendoring on purpose)
+vendor/
+
+# IDE/editor specific
+.vscode/
+.idea/
+*.swp
+
+# Environment files (API keys, secrets, configs)
+.env
+.env.*
+!.env.example  # keep a safe example file
+
+# Dependency cache
+/go.sum~
+/go.mod~
+
+# OS-specific files
+.DS_Store
+Thumbs.db
