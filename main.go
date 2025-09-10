@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/strawHat121/expense-tracker-telegram-bot/config"
+	"github.com/strawHat121/expense-tracker-telegram-bot/db"
 )
 
 func main() {
@@ -17,6 +18,8 @@ func main() {
 		fmt.Println("API_KEY not set")
 		return
 	}
+
+	db.InitDB("Expenses.db")
 
 	resp, err := http.Get("https://api.telegram.org/bot" + apiKey + "/getMe")
 

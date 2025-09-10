@@ -39,3 +39,6 @@ vendor/
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+# Database
+*.db
