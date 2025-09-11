@@ -14,8 +14,6 @@ func InitDB(path string) *sql.DB {
 		log.Fatal("Error in Opening sqlite db", err)
 	}
 
-	defer db.Close()
-
 	createTableQuery := `CREATE TABLE IF NOT EXISTS expenses (
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		category TEXT NOT NULL,
@@ -32,4 +30,15 @@ func InitDB(path string) *sql.DB {
 
 	return db
 
+}
+
+func AddExpense(db *sql.DB, category string, amount int, comment string) {
+
+	insertExpenseQuery := `INSERT INTO expenses (category, amount, comment) VALUES (?, ?, ?)`
+
+	_, err := db.Exec(insertExpenseQuery, category, amount, comment)
+
+	if err != nil {
+		log.Fatal("Error in creating the table", err)
+	}
 }
